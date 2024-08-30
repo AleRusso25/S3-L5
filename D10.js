@@ -298,9 +298,16 @@ function searchByTitle(string) {
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+function searchAndDivide(movie, str) {}
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+
+function removeIndex(movies, indice) {
+  movies.splice(indice, 1);
+  return movies;
+}
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
