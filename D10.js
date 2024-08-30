@@ -259,6 +259,9 @@ function countMovies(movies) {
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+function onlyTheYears(movies) {
+  return movies.map((movie) => movie.Year);
+}
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
@@ -274,9 +277,21 @@ function onlyLastMillennium(movies) {
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 
+function sumAllTheYears(movies) {
+  return movies.reduce((tot, movie) => {
+    return tot + parseInt(movie.Year);
+  }, 0);
+}
+
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+
+function searchByTitle(string) {
+  if (string === movies.Title) {
+    return movies.obj;
+  }
+}
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -293,9 +308,17 @@ function onlyLastMillennium(movies) {
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+function selectContainer() {
+  const container = document.getElementById("container");
+  return container;
+}
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
+function sectedTag() {
+  const tag = document.getElementsByTagName("tag");
+}
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
@@ -304,11 +327,19 @@ function onlyLastMillennium(movies) {
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+function addRed() {
+  const links = document.querySelectorAll("a");
+  links.forEach((link) => {
+    link.style.backgroundColor = "red";
+  });
+}
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-
+function addElement() {
+  const list = document.getElementById("myList");
+}
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
@@ -451,9 +482,11 @@ const movies = [
   },
 ];
 
-movies.Year = parseInt(movies.Year);
 const mostRecentMovie = newestMovie(movies);
 console.log("il film piu recente è ", mostRecentMovie);
 console.log("i film sono in totale", countMovies(movies));
 const lastMillenniumMovies = onlyLastMillennium(movies);
 console.log("I FILM DELL ULTIMO MILLENNIO SONO ", lastMillenniumMovies);
+console.log("Array di solo anni", onlyTheYears(movies));
+console.log("il totale degli anni è ", sumAllTheYears(movies));
+console.log(searchByTitle("Avengers"));
