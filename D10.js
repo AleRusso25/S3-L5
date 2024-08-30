@@ -333,6 +333,7 @@ function addRed() {
     link.style.backgroundColor = "red";
   });
 }
+addRed();
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
@@ -340,9 +341,15 @@ function addRed() {
 function addElement() {
   const list = document.getElementById("myList");
 }
+addElement();
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+let cleanList = () => {
+  letul = document.getElementById("myList");
+  URL.innerHTML = "";
+};
+cleanList();
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
